@@ -1,2 +1,4 @@
-# book_crud
-This is CRUD application with Spring MVC.
+# Book CRUD
+
+> Created with `Spring MVC` and Thymeleaf for template
+

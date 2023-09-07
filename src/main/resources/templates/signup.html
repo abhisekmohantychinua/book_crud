@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <div th:insert="~{fragments/navigator :: bootstrap}"></div>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <div class="container text-center">
+        <h1>Sign Up</h1>
+        <form th:action="@{/signup}" th:object="${user}" method="post" class="container border text-start">
+            <form>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" th:field="*{username}" class="form-control" id="exampleInputEmail1"
+                        aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" th:field="*{password}" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </form>
+    </div>
+</body>
+
+</html>

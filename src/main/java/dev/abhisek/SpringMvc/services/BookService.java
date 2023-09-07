@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import ch.qos.logback.core.joran.util.beans.BeanUtil;
 import dev.abhisek.SpringMvc.entities.Book;
 import dev.abhisek.SpringMvc.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
@@ -35,5 +34,10 @@ public class BookService {
         book.setId(book2.getId());
         return repository
                 .save(book);
+    }
+
+    public List<Book> searchBookByName(String name) {
+        return repository
+                .findByNameContainingIgnoreCase(name);
     }
 }
